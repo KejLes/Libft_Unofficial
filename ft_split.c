@@ -6,7 +6,7 @@
 /*   By: kcanales <kcanales@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 09:56:29 by kcanales          #+#    #+#             */
-/*   Updated: 2025/05/20 13:06:38 by kcanales         ###   ########.fr       */
+/*   Updated: 2025/05/20 13:06:55 by kcanales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,6 @@ char **ft_split(char const *s, char c)
 	char	**ptr_strs;
 	size_t	words_count;
 		
-	ptr_strs = malloc(words_count * sizeof(char *))
+	ptr_strs = malloc(words_count * sizeof(char *));
 	
 }
