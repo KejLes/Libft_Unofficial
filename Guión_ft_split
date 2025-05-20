@@ -1,0 +1,71 @@
+
+#include "libft.h"
+
+int	words_count(char * s, )
+
+contar palabras que son separadas por el carácter
+    Si hay dos o más carácteres separadores, se cuenta como uno
+Despueś cómo hago para definir de dónde a dónde es cada malloc para las palabras, me han recomendado usar el substr, que usa malloc
+pero cómo hago para saber desde dónde a donde es que hay que hacerlo??
+Se me ocurre:
+
+unsigned char* ptr_strs = malloc(words_count * sizeof(char))
+//entonces tengo un ptr_strs, en el cuál el último espacio
+ de memoria es NULL
+//ptr_strs[0] - ptr_strs [1] - ptr_strs[2].
+
+ptr_strs[i] = ft_substr(string, pos_in_str[i], len_word[i]
+)		//Creo que hago un malloc. pos_in_str debería de ser para indicar el número inicial
+
+
+//pos_in_str	-	Entonces, Al principio o después de qu
+e haya un CharDel se guardará en un malloc para usarlo a posteriori
+//len_word		-	Mientras se separa la str y guarda en 
+pos_in_str, este pondrá cuántos carácteres hay en la palabra.
+//Necesitaría un free para liberar espacio en estas listas
+ de int. Entonces al principio haría un malloc según el número de CharDel
+// haya como referencia para crearlo, dado que puede haber
+ words = (CharDel + 1) como mínimo. 
+//Para saber a partir de dónde liberar espacio hago un len
+ que iterará todos los números hasta que detecte que no haya, y al liberar usaré bzero para 
+//evitar errores 
+
+
+Mejor hago tan solo el word count sin tener que guardar en listas
+los "pos_in_str" y "len_word", 
+Por qué??
+Porque tendría que hacer un malloc una y otra vez, y lo tendría
+disperso, en vez de en una única lista. 
+Entonces tan sólo cuento las palabras que habrán para crear el malloc
+"ptr_strs", y luego en otra función ya hago el while con ft_substr
+
+
+Haré que cuente como word cuando encuentre el CharDel al final
+[HECHO]
+
+
+Prototipo para poner las palabras en la lista:
+char 	**put_in_word_list( char *s, size_t words_count)
+Sé que hay que hacer char *ft_substr(char const *s, unsigned int start,
+size_t len); Tengo que encontrar el primer carácter que sea distinto
+a CharDel, (el i será el argumento start en substr), luego
+uso otro contador, que será el argumento len en substr, que empezará
+una vez start empiece, y se detendrá cuando encuentre un CharDel.
+Luego se usará substr con los argumentas ya tenidos, creo que sería
+algo así: 
+ptr_strs[j] = ft_substr(char const *s, i, len);
+Luego se iterará hasta que el siguiente carácter sea distinto a
+CharDel
+Se hace lo mismo en bucle (¿Será que me cabe en 25 lineas?)
+
+
+Creo que voy a hacer uso de words_count en vez de j, para no tener 
+que declarar otra variable, pero tendría que hacerlo a la inversa
+osea, hacer primer el substr de la úlitma palabra.
+
+Si esto:
+char 	**put_in_word_list( char *s, size_t words_count)
+lo paso a esto:?
+void	put_in_word_list( char *s, size_t words_count,
+	char **ptr_strs)
+Para no tener que declarar el ptr_strs, aunque ig

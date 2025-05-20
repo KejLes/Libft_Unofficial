@@ -1,0 +1,38 @@
+Me queda por hacer memchr, strdup y todas de la parte 2, que son 11 funciones
+
+PEDIR 1TO1
+
+calloc	HECHO
+memcmp	HECHO
+memchr	HECHO 1/2
+strdup	HECHO
+substr	HECHO - norminette	Error: TOO_MANY_FUNCS       (line:  94, col:   1):      Too many functions in file
+strjoin	HECHO - norminette [OK]
+strtrim
+split
+itoa
+strmapi
+strteri
+putchar_fd	HECHO - norminette [OK]
+putstr_fd	HECHO - norminette [OK]
+putendl_fd
+putnbr_fd
+
+
+
+ejemplo de ft_split
+// Hace uso de valgrind para ver el registro de los usos de memoria
+//ejemplo de uso en la terminal: c2r18s2% valgrind ./a.out 
+Hola, q, tal,
+
+char **result;
+int palabras;
+
+palabras = conteo(str);
+result = malloc(sizeof(char *) * #PALABRAS + 1);
+
+result[4];
+1 = Hola
+2 = q
+3 = tal
+4 = NULL;
