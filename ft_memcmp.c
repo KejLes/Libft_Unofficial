@@ -6,24 +6,24 @@
 /*   By: kcanales <kcanales@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 15:22:03 by kcanales          #+#    #+#             */
-/*   Updated: 2025/05/16 16:21:41 by kcanales         ###   ########.fr       */
+/*   Updated: 2025/05/21 16:27:09 by kcanales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
 #include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t			i;
-	unsigned char	*str1;
-	unsigned char	*str2;
+	size_t				i;
+	unsigned const char	*str1;
+	unsigned const char	*str2;
 
 	i = 0;
-	str1 = (unsigned char *)s1;
-	str2 = (unsigned char *)s2;
-	while ((i != n) && (str1[i] != '\0') && (str2[i] != '\0'))
+	str1 = (unsigned const char *)s1;
+	str2 = (unsigned const char *)s2;
+	if (!n)
+		return (0);
+	while ((i != (n - 1)) && (str1[i] != '\0') && (str2[i] != '\0'))
 	{
 		if (str1[i] != str2[i])
 			return (str1[i] - str2[i]);
@@ -32,7 +32,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	return (str1[i] - str2[i]);
 }
 /*
-// strcmp y memcmp son parecidos
+// strncmp y memcmp son parecidos
 int main() {
     char a[] = "ABCD";
     char b[] = "ABCE";

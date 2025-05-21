@@ -20,6 +20,7 @@ putnbr_fd
 
 
 
+
 ejemplo de ft_split
 // Hace uso de valgrind para ver el registro de los usos de memoria
 //ejemplo de uso en la terminal: c2r18s2% valgrind ./a.out 

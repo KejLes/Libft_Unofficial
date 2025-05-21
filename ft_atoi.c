@@ -6,23 +6,13 @@
 /*   By: kcanales <kcanales@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 12:56:17 by kcanales          #+#    #+#             */
-/*   Updated: 2025/05/20 12:56:20 by kcanales         ###   ########.fr       */
+/*   Updated: 2025/05/21 16:45:48 by kcanales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
 #include "libft.h"
 
-int	ft_isdigit(int c)
-{
-	if (c >= '0' && c <= '9')
-		return (2048);
-	else
-		return (0);
-}
-
-int	ft_numero_final(const char *nptr, unsigned int i)
+static int	ft_numero_final(const char *nptr, unsigned int i)
 {
 	int	numero_final;
 

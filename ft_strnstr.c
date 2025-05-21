@@ -6,21 +6,11 @@
 /*   By: kcanales <kcanales@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 11:57:00 by kcanales          #+#    #+#             */
-/*   Updated: 2025/05/16 16:29:34 by kcanales         ###   ########.fr       */
+/*   Updated: 2025/05/21 16:42:54 by kcanales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
@@ -30,22 +20,22 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 	i = 0;
 	j = 0;
-	if (!little[0])
+	if (!*little)
 		return ((char *) big);
 	len_little = ft_strlen(little);
-	while (i < len && big[i])
+	while (i < len && big[i] != '\0')
 	{
 		if (big[i] != little[j])
 			j = 0;
 		else
 			j++;
-		if (j == len_little)
+		if (j == len_little - 1)
 			return ((char *)(big + (i - j)));
 		i++;
 	}
 	return (NULL);
 }
-/*
+
 //     <<<<<<<<<<<<<<<<HECHO CON IA>>>>>>>>>>>>>>>>> 
 //No lo comparon con la función original
 //Lo estoy comparando con una replica hecha por otro estudiante de 42 
@@ -118,4 +108,3 @@ int main(void)
     }
     return 0;
 }
-*/

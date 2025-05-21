@@ -6,88 +6,11 @@
 /*   By: kcanales <kcanales@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 09:32:07 by kcanales          #+#    #+#             */
-/*   Updated: 2025/05/16 16:29:48 by kcanales         ###   ########.fr       */
+/*   Updated: 2025/05/21 15:17:57 by kcanales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*
-size_t	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
-
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
-{
-	int	i;
-	int	len_src;
-
-	len_src = ft_strlen(src);
-	i = 0;
-	if (size == 0)
-		return (len_src);
-	while ((size > 1) && (src[i] != '\0'))
-	{
-		dst[i] = src [i];
-		i++;
-		size--;
-	}
-	return (len_src);
-}
-
-void	ft_bzero(void *s, size_t n)
-{
-	char	*str;
-	size_t	i;
-
-	str = (char *) s;
-	i = 0;
-	while (i != n)
-	{
-		str[i] = '\0';
-		i++;
-	}
-}
-
-char	*ft_strdup(const char *s)
-{
-	size_t	len_s;
-	size_t	i;
-	char	*ptr;
-
-	len_s = ft_strlen(s);
-	i = 0;
-	ptr = (char *)malloc((len_s + 1) * sizeof(char));
-	if (ptr == NULL)
-		return (NULL);
-	while (i < len_s)
-	{
-		ptr[i] = s[i];
-		i++;
-	}
-	ptr[i] = '\0';
-	return (ptr);
-}
-
-void	*ft_calloc(size_t nmemb, size_t size)
-{
-	size_t	n;
-	void	*ptr;
-
-	if (nmemb == 0 || size == 0)
-		return (NULL);
-	n = nmemb * size;
-	ptr = malloc(n);
-	if (ptr == NULL)
-		return (NULL);
-	ft_bzero(ptr, n);
-	return (ptr);
-}*/
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
