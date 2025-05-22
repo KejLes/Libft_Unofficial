@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kcanales <kcanales@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/14 11:57:00 by kcanales          #+#    #+#             */
-/*   Updated: 2025/05/21 16:50:19 by kcanales         ###   ########.fr       */
+/*   Created: 2025/05/22 09:38:05 by kcanales          #+#    #+#             */
+/*   Updated: 2025/05/22 10:25:22 by kcanales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,28 @@
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
-	size_t	len_little;
 	size_t	j;
 
+	if (little[0] == '\0')
+		return ((char *)big);
 	i = 0;
 	j = 0;
-	if (!*little)
-		return ((char *) big);
-	len_little = ft_strlen(little);
 	while (i < len && big[i] != '\0')
 	{
-		if (big[i] != little[j])
-			j = 0;
-		else
+		if (big[i] == little [j])
 			j++;
-		if (j == len_little - 1)
-			return ((char *)(big + (i - j)));
+		else
+		{
+			j = 0;
+			i = i - j;
+		}
+		if ((char)little[j] == '\0')
+			return ((char *)(big + i - j + 1));
 		i++;
 	}
 	return (NULL);
 }
+
 /*
 //     <<<<<<<<<<<<<<<<HECHO CON IA>>>>>>>>>>>>>>>>> 
 //No lo comparon con la función original

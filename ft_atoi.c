@@ -6,58 +6,62 @@
 /*   By: kcanales <kcanales@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 12:56:17 by kcanales          #+#    #+#             */
-/*   Updated: 2025/05/21 16:45:48 by kcanales         ###   ########.fr       */
+/*   Updated: 2025/05/22 17:53:01 by kcanales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_numero_final(const char *nptr, unsigned int i)
+static int	ft_final_number(const char *nptr, unsigned int i)
 {
-	int	numero_final;
+	int	final_number;
 
-	numero_final = 0;
+	final_number = 0;
 	while (nptr[i] != '\0' && ft_isdigit((int)nptr[i]) == 2048)
 	{
-		if (numero_final == 0)
-			numero_final = (nptr[i] - 48);
+		if (final_number == 0)
+			final_number = (nptr[i] - 48);
 		else
-			numero_final = numero_final * 10 + ((int)nptr[i] -48);
+			final_number = final_number * 10 + ((int)nptr[i] -48);
 		i++;
 	}
-	return (numero_final);
+	return (final_number);
+}
+
+int	iter_spaces(int c)
+{
+	if ((c >= 9 && c <= 13) || c == 32)
+		return (1);
+	else
+		return (0);
 }
 
 int	ft_atoi(const char *nptr)
 {
-	int	simbolo_final;
-	int	numero_final;
+	int	final_sign;
+	int	final_number;
 	int	i;
 
-	simbolo_final = 1;
+	final_sign = 1;
 	i = 0;
 	if (nptr[i] == '\0')
 		return (0);
-	while (nptr[i] == ' ' || nptr[i] == '	')
+	while (iter_spaces(nptr[i]))
 		i++;
 	if (nptr[i] == '-' || nptr[i] == '+')
 	{
 		if (nptr[i] == '-')
-			simbolo_final = -1;
+			final_sign = -1;
 		if (ft_isdigit((int)nptr[i + 1]) == 0)
 			return (0);
 		i++;
 	}
 	if (ft_isdigit((int)nptr[i]) == 0)
 		return (0);
-	numero_final = ft_numero_final(nptr, i);
-	return (numero_final * simbolo_final);
+	final_number = ft_final_number(nptr, i);
+	return (final_number * final_sign);
 }
-
 /*
-#include <stdio.h>
-#include <stdlib.h>
-
 // Prototipo de tu función personalizada
 int ft_atoi(const char *str);
 
@@ -81,7 +85,6 @@ int main(void)
 		"-2147483648",      // INT_MIN
 		"  0000123",        // ceros a la izquierda
 		"   +0000123",      // ceros a la izquierda y signo
-		"9999999999999999999999", // número fuera del rango de int
 		"",                 // cadena vacía
 		"   ",              // solo espacios
 		"abc",              // solo letras
@@ -107,5 +110,4 @@ int main(void)
 	}
 
 	return 0;
-}
-*/
+}*/

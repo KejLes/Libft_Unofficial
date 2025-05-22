@@ -10,7 +10,7 @@ substr	HECHO - norminette	Error: TOO_MANY_FUNCS       (line:  94, col:   1):    
 strjoin	HECHO - norminette [OK]
 strtrim
 split
-itoa
+itoa	HECHO - Falta ver los errores en otros tests de paco
 strmapi
 strteri
 putchar_fd	HECHO - norminette [OK]
