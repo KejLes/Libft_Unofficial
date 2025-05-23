@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split1.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kcanales <kcanales@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 09:56:29 by kcanales          #+#    #+#             */
-/*   Updated: 2025/05/20 13:06:55 by kcanales         ###   ########.fr       */
+/*   Updated: 2025/05/23 16:57:36 by kcanales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	words_count(char *s, char c)
+static int	words_count(char *s, char c)
 {
 	size_t	i;
 	size_t	words_count;

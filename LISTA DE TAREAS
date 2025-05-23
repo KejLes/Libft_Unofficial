@@ -8,15 +8,17 @@ memchr	HECHO 1/2
 strdup	HECHO
 substr	HECHO - norminette	Error: TOO_MANY_FUNCS       (line:  94, col:   1):      Too many functions in file
 strjoin	HECHO - norminette [OK]
-strtrim
+strtrim HECHO - norminette [OK] paco [OK]
 split
 itoa	HECHO - Falta ver los errores en otros tests de paco
-strmapi
-strteri
+strmapi	HECHO - errores de compilación en paco
+strteri	HECHO - paco [OK]
 putchar_fd	HECHO - norminette [OK]
 putstr_fd	HECHO - norminette [OK]
-putendl_fd
-putnbr_fd
+putendl_fd	HECHO - O este o el de abajo me da error paco
+putnbr_fd	HECHO - 
+
+memcpy		Debo de verlo de nuevo, el man memcpy dice que debo usar memmove si las areas se sobreponen, hay pruebas que dan mal en paco
 
 
 

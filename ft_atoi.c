@@ -6,7 +6,7 @@
 /*   By: kcanales <kcanales@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 12:56:17 by kcanales          #+#    #+#             */
-/*   Updated: 2025/05/22 17:53:01 by kcanales         ###   ########.fr       */
+/*   Updated: 2025/05/23 09:45:21 by kcanales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int	ft_final_number(const char *nptr, unsigned int i)
 	return (final_number);
 }
 
-int	iter_spaces(int c)
+static int	iter_spaces(int c)
 {
 	if ((c >= 9 && c <= 13) || c == 32)
 		return (1);

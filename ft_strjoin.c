@@ -6,38 +6,11 @@
 /*   By: kcanales <kcanales@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 10:24:54 by kcanales          #+#    #+#             */
-/*   Updated: 2025/05/16 16:28:49 by kcanales         ###   ########.fr       */
+/*   Updated: 2025/05/23 16:56:05 by kcanales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void	*ft_memcpy(void *dest, const void *src, size_t n)
-{
-	char	*destiny;
-	char	*source;
-	size_t	i;
-
-	i = 0;
-	destiny = (char *) dest;
-	source = (char *) src;
-	while (i != n)
-	{
-		destiny[i] = source[i];
-		i++;
-	}
-	return (dest);
-}
-
-size_t	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

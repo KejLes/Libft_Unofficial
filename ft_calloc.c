@@ -6,7 +6,7 @@
 /*   By: kcanales <kcanales@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 13:29:57 by kcanales          #+#    #+#             */
-/*   Updated: 2025/05/16 18:13:19 by kcanales         ###   ########.fr       */
+/*   Updated: 2025/05/23 18:49:20 by kcanales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	size_t	n;
 	void	*ptr;
 
-	if (nmemb == 0 || size == 0)
-		return (NULL);
 	n = nmemb * size;
 	ptr = malloc(n);
 	if (ptr == NULL)
