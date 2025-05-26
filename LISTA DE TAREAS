@@ -9,7 +9,7 @@ strdup	HECHO
 substr	HECHO - norminette	Error: TOO_MANY_FUNCS       (line:  94, col:   1):      Too many functions in file
 strjoin	HECHO - norminette [OK]
 strtrim HECHO - norminette [OK] paco [OK]
-split
+split	HECHO - norminette [OK]
 itoa	HECHO - Falta ver los errores en otros tests de paco
 strmapi	HECHO - errores de compilación en paco
 strteri	HECHO - paco [OK]
@@ -20,6 +20,8 @@ putnbr_fd	HECHO -
 
 memcpy		Debo de verlo de nuevo, el man memcpy dice que debo usar memmove si las areas se sobreponen, hay pruebas que dan mal en paco
 
+
+PACOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
 
 
 

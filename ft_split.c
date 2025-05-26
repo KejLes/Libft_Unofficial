@@ -6,7 +6,7 @@
 /*   By: kcanales <kcanales@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 10:51:00 by kcanales          #+#    #+#             */
-/*   Updated: 2025/05/26 10:55:47 by kcanales         ###   ########.fr       */
+/*   Updated: 2025/05/26 16:22:55 by kcanales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,25 @@
 static size_t	words_count(char const *s, char c);
 static void		put_in_word_list(const char *s, char c,	char **ptr_strs);
 static void		free_arr_of_strs(char **arr, size_t words);
+static int		check_null(char **ptr_strs, size_t words);
+
+/*
+int	main(void)
+{
+	char	**c;
+	char	*s = "Hola!,,,,,,";
+	char	CharDel = ',';
+	
+	size_t	words = words_count(s, CharDel);
+	
+	c = ft_split(s, CharDel);
+	
+	for (int i = 0; i < words; i++)	
+		printf("%s\n", c[i]);
+		
+	free_arr_of_strs(c, words);
+}
+*/
 
 char	**ft_split(char const *s, char c)
 {
@@ -22,30 +41,30 @@ char	**ft_split(char const *s, char c)
 	size_t	words;
 
 	words = words_count(s, c);
-	ptr_strs = calloc((words + 1), sizeof(char *));
+	ptr_strs = (char **)ft_calloc((words + 1), sizeof(char *));
 	if (!ptr_strs)
-	{
-		free(ptr_strs);
 		return (NULL);
-	}
 	put_in_word_list(s, c, ptr_strs);
-	if (ptr_strs == NULL)
-	{
-		free_arr_of_strs(ptr_strs, words);
+	if (!check_null(ptr_strs, words))
 		return (NULL);
-	}
 	return (ptr_strs);
 }
 
-int	main(void)
+static int	check_null(char **ptr_strs, size_t words)
 {
-	char	a;
-	char	*b = &a;
-	char	**c = &b;
-	c = ft_split("Hola!,,,,,,,,,,,", ',');
-	for (int i = 0; i < 3; i++)
-		printf("%s\n", c[i]);
-	free_arr_of_strs(c, 3);
+	size_t	j;
+
+	j = 0;
+	while (j < words)
+	{
+		if (ptr_strs[j] == NULL)
+		{
+			free_arr_of_strs(ptr_strs, words);
+			return (0);
+		}
+		j++;
+	}
+	return (1);
 }
 
 static void	free_arr_of_strs(char **arr, size_t words)

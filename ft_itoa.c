@@ -6,7 +6,7 @@
 /*   By: kcanales <kcanales@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 16:52:30 by kcanales          #+#    #+#             */
-/*   Updated: 2025/05/23 19:00:16 by kcanales         ###   ########.fr       */
+/*   Updated: 2025/05/26 16:21:06 by kcanales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ static char	*calloc_ptr(int len, int flag_negative)
 	char	*ptr_str;
 
 	if (flag_negative == 0)
-		ptr_str = ft_calloc(len + 1, 1);	//Aquí hacía (len + 1, sizeof(char *))
+		ptr_str = ft_calloc(len + 1, 1);
 	else
 	{
-		ptr_str = ft_calloc(len + 1, 1);	//Aquí hacía (len + 2, sizeof(char *)) Haciendo el cambio, paco lo hace bien
+		ptr_str = ft_calloc(len + 1, 1);
 	}
 	if (!ptr_str)
 		return (NULL);

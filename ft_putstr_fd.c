@@ -6,7 +6,7 @@
 /*   By: kcanales <kcanales@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 13:42:19 by kcanales          #+#    #+#             */
-/*   Updated: 2025/05/23 16:15:29 by kcanales         ###   ########.fr       */
+/*   Updated: 2025/05/26 16:57:22 by kcanales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@ void	ft_putstr_fd(char *s, int fd)
 
 // int	main(void)
 // {
-// 	ft_putstr_fd("Hola", 1);
+// 	char *s = "Hola";
+// 	ft_putstr_fd(s, 1);
 // }

@@ -6,7 +6,7 @@
 /*   By: kcanales <kcanales@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 14:24:31 by kcanales          #+#    #+#             */
-/*   Updated: 2025/05/16 19:13:08 by kcanales         ###   ########.fr       */
+/*   Updated: 2025/05/26 17:02:39 by kcanales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strchr(const char *s, int c)
 	}
 	if ((char)c == '\0')
 		return ((char *)&s[i]);
-	return (0);
+	return ((char *)NULL);
 }
 
 /*

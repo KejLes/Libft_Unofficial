@@ -6,17 +6,17 @@
 /*   By: kcanales <kcanales@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 13:38:20 by kcanales          #+#    #+#             */
-/*   Updated: 2025/05/26 10:51:46 by kcanales         ###   ########.fr       */
+/*   Updated: 2025/05/26 16:32:40 by kcanales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-#include <ctype.h>		// isalpha - Elminar antes de entregar
-#include <string.h>		// Memcpy - Eliminar antes de entregar
+#include <ctype.h>		// isalpha - Elmina/r antes de entregar
 # include <stdlib.h>	// Malloc
 # include <unistd.h>	// Para el write
-#include <stddef.h>		// Para definir el size_t
+#include <stddef.h>		// Para definir el size_t - Norminette 
+						// no permite entregarlo
 #include <stdio.h>		// Printf - Eliminar antes de entregar
 
 int		ft_isalpha(int c);
