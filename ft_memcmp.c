@@ -6,7 +6,7 @@
 /*   By: kcanales <kcanales@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 15:22:03 by kcanales          #+#    #+#             */
-/*   Updated: 2025/05/21 16:27:09 by kcanales         ###   ########.fr       */
+/*   Updated: 2025/05/27 16:04:14 by kcanales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	unsigned const char	*str2;
 
 	i = 0;
-	str1 = (unsigned const char *)s1;
-	str2 = (unsigned const char *)s2;
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
 	if (!n)
 		return (0);
-	while ((i != (n - 1)) && (str1[i] != '\0') && (str2[i] != '\0'))
+	while (i < n)
 	{
 		if (str1[i] != str2[i])
 			return (str1[i] - str2[i]);
 		i++;
 	}
-	return (str1[i] - str2[i]);
+	return (0);
 }
 /*
 // strncmp y memcmp son parecidos

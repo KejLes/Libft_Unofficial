@@ -6,7 +6,7 @@
 /*   By: kcanales <kcanales@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 14:24:31 by kcanales          #+#    #+#             */
-/*   Updated: 2025/05/26 17:12:43 by kcanales         ###   ########.fr       */
+/*   Updated: 2025/05/27 12:29:09 by kcanales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,26 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
+	int				i;
+	unsigned char	c_;
 
+	c_ = (unsigned char)c;
 	i = ft_strlen(s);
 	while (i >= 0)
 	{
-		if (s[i] == c)
+		if (s[i] == c_)
 			return ((char *)&s[i]);
 		i--;
 	}
-	if ((char)c == '\0')
+	if ((char)c_ == '\0')
 		return ((char *)(&s[ft_strlen(s) + 1]));
-	return ((char *)NULL);
+	return (NULL);
 }
 
 /*
 int main() {
 	char texto[] = "Programación en C es divertido";
-	char buscar = 'C';
+	char buscar = 't' + 256;
 	
 	// Buscar la primera aparición de 'C'
 	char *resultado = ft_strrchr(texto, buscar);
