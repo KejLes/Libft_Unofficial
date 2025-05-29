@@ -6,7 +6,7 @@
 /*   By: kcanales <kcanales@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 09:38:05 by kcanales          #+#    #+#             */
-/*   Updated: 2025/05/22 10:25:22 by kcanales         ###   ########.fr       */
+/*   Updated: 2025/05/29 15:06:58 by kcanales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,23 +27,22 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 			j++;
 		else
 		{
-			j = 0;
 			i = i - j;
+			j = 0;
 		}
-		if ((char)little[j] == '\0')
+		if (little[j] == '\0')
 			return ((char *)(big + i - j + 1));
 		i++;
 	}
 	return (NULL);
 }
 
-/*
 //     <<<<<<<<<<<<<<<<HECHO CON IA>>>>>>>>>>>>>>>>> 
-//No lo comparon con la función original
+//No lo comparo con la función original
 //Lo estoy comparando con una replica hecha por otro estudiante de 42 
 //Esto es debido a que no hay lib en c predeterminada que 
 //tenga la función strnstr
-
+/*
 char	*ftft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
@@ -89,6 +88,7 @@ int main(void)
         {"abcabcabc", "abc", 9},
         {"abcabcabc", "abc", 2},
         {"abcabcabc", "cab", 7},
+        {"aaabcabcd", "abcd", 9},
     };
 
     int num_tests = sizeof(tests) / sizeof(tests[0]);
@@ -109,4 +109,5 @@ int main(void)
             printf("  Resultado: ERROR\n\n");
     }
     return 0;
-}*/
+}
+*/
